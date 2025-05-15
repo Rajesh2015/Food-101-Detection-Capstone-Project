@@ -1,7 +1,3 @@
-Here's a clean and professional version of your **`README.md`** file for GitHub, with proper markdown formatting for clarity and ease of reading. It’s structured to help reviewers or collaborators quickly understand the context, objectives, and deliverables of the Capstone project.
-
----
-
 # 🥘 Capstone Project - Food Identification using Computer Vision
 
 **📚 Provided by:** Great Learning
