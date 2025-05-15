@@ -108,5 +108,3 @@ Design a **clickable UI interface**:
 * For GUI (web): `Flask` or `Django`
 
 ---
-
-Feel free to copy and paste this into your GitHub `README.md`. Let me know if you want to auto-generate links, badge icons, or a table of contents!
