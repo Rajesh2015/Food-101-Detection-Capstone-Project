@@ -1,19 +1,29 @@
-import streamlit as st
-from PIL import Image
-import numpy as np
-from ultralytics import YOLO
 import os
-import torch
+import streamlit as st
+from ultralytics import YOLO
 from torch.serialization import add_safe_globals
 from ultralytics.nn.tasks import DetectionModel
+import torch
+import types
+
+# --- Patch torch_safe_load to force weights_only=False ---
+from ultralytics.nn import tasks
+
+original_safe_load = tasks.torch_safe_load
+
+def patched_safe_load(file, device=None):
+    return torch.load(file, map_location=device, weights_only=False)
+
+tasks.torch_safe_load = patched_safe_load
+
+# Allowlist DetectionModel so torch.load works with pickled class
+add_safe_globals([DetectionModel])
 
 
 # Load model once
 @st.cache_resource
 def load_model():
     model_path = os.path.join(os.path.dirname(__file__), "yolo_model_aug.pt")
-    # Allowlist DetectionModel so torch.load works with pickled class
-    add_safe_globals([DetectionModel])
     return YOLO(model_path)
 
 model = load_model()
