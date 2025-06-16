@@ -2,11 +2,16 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 from ultralytics import YOLO
+import torch
+from torch.serialization import add_safe_globals
+from ultralytics.nn.tasks import DetectionModel
+import os
+
 
 # Load model once
 @st.cache_resource
 def load_model():
-    import os
+    add_safe_globals([DetectionModel])
     model_path = os.path.join(os.path.dirname(__file__), "yolo_model_aug.pt")
     return YOLO(model_path)
 
