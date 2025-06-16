@@ -27,6 +27,8 @@ def load_model():
     return YOLO(model_path)
 
 model = load_model()
+model.to("cpu")
+
 
 # Sidebar
 
