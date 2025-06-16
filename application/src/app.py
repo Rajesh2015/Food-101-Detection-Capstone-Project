@@ -12,7 +12,7 @@ from ultralytics.nn import tasks
 original_safe_load = tasks.torch_safe_load
 
 def patched_safe_load(file, device=None):
-    return torch.load(file, map_location=device, weights_only=False)
+    return torch.load(file, map_location=torch.device("cpu"), weights_only=False)
 
 tasks.torch_safe_load = patched_safe_load
 
