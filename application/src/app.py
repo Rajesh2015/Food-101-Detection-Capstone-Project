@@ -14,6 +14,9 @@ def load_model():
 model = load_model()
 
 # Sidebar
+
+st.image("https://raw.githubusercontent.com/Rajesh2015/Food-101-Detection-Capstone-Project/refs/heads/main/application/src/assets/logo.png", width=300)  # Adjust width as needed
+st.markdown("### Food Classifier And Bounding Box Generator Trained with Yolo V8\nby **Team CV5**")
 st.sidebar.title("📌 About")
 st.sidebar.markdown("""
 **Food Detection App CV Team 5**  
