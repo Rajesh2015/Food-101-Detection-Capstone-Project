@@ -3,12 +3,17 @@ from PIL import Image
 import numpy as np
 from ultralytics import YOLO
 import os
+import torch
+from torch.serialization import add_safe_globals
+from ultralytics.nn.tasks import DetectionModel
 
 
 # Load model once
 @st.cache_resource
 def load_model():
     model_path = os.path.join(os.path.dirname(__file__), "yolo_model_aug.pt")
+    # Allowlist DetectionModel so torch.load works with pickled class
+    add_safe_globals([DetectionModel])
     return YOLO(model_path)
 
 model = load_model()
