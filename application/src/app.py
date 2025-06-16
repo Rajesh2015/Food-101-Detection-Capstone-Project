@@ -5,6 +5,8 @@ from torch.serialization import add_safe_globals
 from ultralytics.nn.tasks import DetectionModel
 import torch
 import types
+from PIL import Image
+import numpy as np
 
 # --- Patch torch_safe_load to force weights_only=False ---
 from ultralytics.nn import tasks
