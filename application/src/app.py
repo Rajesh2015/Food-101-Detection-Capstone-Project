@@ -66,6 +66,9 @@ col1, col2 = st.columns([3, 1])
 with col1:
     uploaded_file = st.file_uploader("Upload an image file", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
 with col2:
+    # Add vertical space to center the button with file uploader height
+    st.write("")  # Adds spacing (you can duplicate it or use <br> for more control)
+    st.write("")  
     predict_button = st.button("🔍 Predict", use_container_width=True)
 
 
