@@ -40,20 +40,20 @@ Design a **Deep Learning-based food identification system** using classification
 
 ## ✅ Project Tasks
 
-### 🧩 Milestone 1 – \[40 points]
+### 🧩 Milestone 1 
 
 **Input**: Raw dataset and context.
 **Steps**:
 
-1. **Import the dataset** \[2 pts]
-2. **Map training/testing images to food classes** \[5 pts]
+1. **Import the dataset** 
+2. **Map training/testing images to food classes** 
 3. **Create annotations** for 10 food classes
 
    * Pick **10 classes**, choose **50 images** from each
-   * Manually annotate images using any image annotation tool \[8 pts]
-4. **Display images with bounding boxes** created in step 3 \[5 pts]
-5. **Build, train, and test a basic CNN** for food classification \[10 pts]
-6. **Submit interim report** \[10 pts]
+   * Manually annotate images using any image annotation tool 
+4. **Display images with bounding boxes** created in step 3 
+5. **Build, train, and test a basic CNN** for food classification 
+6. **Submit interim report** 
 
 **📦 Submission**:
 
@@ -62,17 +62,17 @@ Design a **Deep Learning-based food identification system** using classification
 
 ---
 
-### 🧩 Milestone 2 – \[60 points]
+### 🧩 Milestone 2 
 
 **Input**: Preprocessed data from Milestone 1
 **Steps**:
 
-1. **Fine-tune basic CNN models** \[5 pts]
+1. **Fine-tune basic CNN models** 
 2. **Build & test RCNN and hybrid object detection models**
 
-   * Use bounding boxes or masks for identifying regions of interest \[10 pts]
-3. **Pickle the trained model for future predictions** \[5 pts]
-4. **Submit final report** \[40 pts]
+   * Use bounding boxes or masks for identifying regions of interest 
+3. **Pickle the trained model for future predictions** 
+4. **Submit final report** 
 
 **📦 Submission**:
 
@@ -104,3 +104,5 @@ Design a **clickable UI interface**:
 * For GUI (web): `Flask` or `Django`
 
 ---
+Stream_It Deployted Model
+https://food-101-capstone-cv5.streamlit.app/
