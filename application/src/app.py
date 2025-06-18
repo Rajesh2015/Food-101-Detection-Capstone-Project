@@ -59,31 +59,6 @@ st.markdown(
     """
     <style>
         /* Overall background */
-        .stApp {
-            background-color: #ffffff;
-            color: white;
-        }
-
-        /* Sidebar background */
-        section[data-testid="stSidebar"] {
-            background-color: #ffffff;
-        }
-
-        /* Sidebar text color */
-        section[data-testid="stSidebar"] * {
-            color: white;
-        }
-
-        /* Titles and headers */
-        h1, h2, h3, h4, h5, h6 {
-            color: #FFB347;
-        }
-
-        /* Markdown blocks */
-        .markdown-text-container {
-            color: blue;
-        }
-
         /* Buttons */
         div.stButton > button {
             background-color: #4CAF50;
@@ -101,20 +76,6 @@ st.markdown(
         div.stButton > button:hover {
             background-color: #45a049;
         }
-
-        /* File uploader tweaks */
-        [data-testid="stFileUploader"] {
-            background-color: #1e1e1e;
-            padding: 1em;
-            border-radius: 10px;
-            border: 1px solid #444;
-        }
-
-        /* Table / detected items */
-        .stDataFrame, .stTable {
-            background-color: #111 !important;
-        }
-
         /* Prediction result highlight */
         .highlight-box {
             background-color: #222;
