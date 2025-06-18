@@ -49,12 +49,17 @@ Using YOLOv8 to detect food items from the **Food-101** dataset.
 """)
 
 # Main area
-st.title("🍔 Food Item Detection")
-st.markdown("Upload a food image, and click **Predict** to see bounding boxes.")
+st.markdown("## 🍽️ Food Item Detection")
+st.markdown("Upload an image of a food item and click **🔍 Predict** to detect and classify items.")
+st.markdown("---")
 
 # File uploader
-uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-predict_button = st.button("🔍 Predict")
+col1, col2 = st.columns([3, 1])
+with col1:
+    uploaded_file = st.file_uploader("Upload an image file", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+with col2:
+    predict_button = st.button("🔍 Predict", use_container_width=True)
+
 
 # Prediction logic
 if uploaded_file and predict_button:
@@ -66,7 +71,19 @@ if uploaded_file and predict_button:
     annotated_img = results[0].plot()
 
     # Display
-    st.image(annotated_img, caption="🔎 Predicted Image", use_column_width=True)
+    st.image(annotated_img, caption="🧠 Model Output with Detected Boxes", use_column_width=True)
+    st.success(f"✅ {len(results[0].boxes)} object(s) detected.")
+    st.subheader("📦 Detected Items")
+    for box in results[0].boxes.data.cpu().numpy():
+        x1, y1, x2, y2, score, cls_id = box
+        cls_name = model.names[int(cls_id)]
+        st.markdown(f"""
+        - **{cls_name}**  
+        🔹 Confidence: `{score:.2f}`  
+        🔹 Coordinates: `[x1: {int(x1)}, y1: {int(y1)}, x2: {int(x2)}, y2: {int(y2)}]`
+        """)
+
+
 
     # Boxes
     st.subheader("📦 Detected Objects")
