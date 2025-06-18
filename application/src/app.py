@@ -55,6 +55,77 @@ Using YOLOv8 to detect food items from the **Food-101** dataset.
 
 📧 Contact: `dashrajesh49@gmail.com`
 """)
+st.markdown(
+    """
+    <style>
+        /* Overall background */
+        .stApp {
+            background-color: #0f0f0f;
+            color: white;
+        }
+
+        /* Sidebar background */
+        section[data-testid="stSidebar"] {
+            background-color: #1e1e1e;
+        }
+
+        /* Sidebar text color */
+        section[data-testid="stSidebar"] * {
+            color: white;
+        }
+
+        /* Titles and headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: #FFB347;
+        }
+
+        /* Markdown blocks */
+        .markdown-text-container {
+            color: white;
+        }
+
+        /* Buttons */
+        div.stButton > button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5em 1.5em;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Button hover effect */
+        div.stButton > button:hover {
+            background-color: #45a049;
+        }
+
+        /* File uploader tweaks */
+        [data-testid="stFileUploader"] {
+            background-color: #1e1e1e;
+            padding: 1em;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+
+        /* Table / detected items */
+        .stDataFrame, .stTable {
+            background-color: #111 !important;
+        }
+
+        /* Prediction result highlight */
+        .highlight-box {
+            background-color: #222;
+            padding: 1em;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Main area
 st.markdown("## 🍽️ Food Item Detection")
