@@ -35,11 +35,19 @@ model.to("cpu")
 
 # Sidebar
 
-st.image("https://raw.githubusercontent.com/Rajesh2015/Food-101-Detection-Capstone-Project/refs/heads/main/application/src/assets/logo.png", width=300)  # Adjust width as needed
+# Centered logo at the top
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="https://raw.githubusercontent.com/Rajesh2015/Food-101-Detection-Capstone-Project/refs/heads/main/application/src/assets/logo.png" width="200">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown("### Food Classifier And Bounding Box Generator Trained with Yolo V8\nby **Team CV5**")
 st.sidebar.title("📌 About")
 st.sidebar.markdown("""
-**Food Detection App CV Team 5**  
+**Food Detection App Team CV5**  
 Using YOLOv8 to detect food items from the **Food-101** dataset.
 
 - Built with [Ultralytics YOLO](https://docs.ultralytics.com)
@@ -63,11 +71,12 @@ with col2:
 
 # Prediction logic
 if uploaded_file and predict_button:
-    image = Image.open(uploaded_file).convert("RGB")
-    image_np = np.array(image)
+    with st.spinner("🔍 Running prediction... Please wait."):
+            image = Image.open(uploaded_file).convert("RGB")
+            image_np = np.array(image)
 
-    # Run inference
-    results = model(image_np)
+            # Run inference
+            results = model(image_np)
     annotated_img = results[0].plot()
 
     # Display
