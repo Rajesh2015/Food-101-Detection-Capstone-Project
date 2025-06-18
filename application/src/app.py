@@ -60,13 +60,13 @@ st.markdown(
     <style>
         /* Overall background */
         .stApp {
-            background-color: #0f0f0f;
+            background-color: #ffffff;
             color: white;
         }
 
         /* Sidebar background */
         section[data-testid="stSidebar"] {
-            background-color: #1e1e1e;
+            background-color: #ffffff;
         }
 
         /* Sidebar text color */
@@ -81,7 +81,7 @@ st.markdown(
 
         /* Markdown blocks */
         .markdown-text-container {
-            color: white;
+            color: blue;
         }
 
         /* Buttons */
